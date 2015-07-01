@@ -6,8 +6,8 @@
 
 ## 1. use background pictures
 ##### what i learn in this demo
-		* how to use require.js
-		* how to use sass
+		* how to use `require.js`
+		* how to use `sass`
 		* how to modularize css 
 		* how to locate picture locations
 
