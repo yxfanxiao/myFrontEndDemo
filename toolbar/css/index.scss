@@ -1,0 +1,131 @@
+//imooc toolbar 
+$toolbar-size: 52px;
+.toolbar-item, .toolbar-layer {
+	background-image: url(../img/toolbar.png);
+	background-repeat: no-repeat;
+}
+@import "mixin";
+@import "toolbar";
+
+
+#divContainer {
+	font-family: Arial;
+	font-size:40px;
+	text-align: center;
+}
+.toolbar {
+	position: fixed;
+	left: 70%;
+	bottom:5px;
+	margin-left: -$toolbar-size / 2;
+}
+.toolbar-item {
+	position:relative;
+	display: block;
+	width: $toolbar-size;
+	height: $toolbar-size;
+	margin-top:1px;
+	transition: background-position 1s;
+	&:hover {
+		.toolbar-layer {
+			opacity: 1;
+			filter: alpha(opacity=100);
+			transform: scale(1);
+		}
+	}
+}
+.toolbar-item-weixin {
+	@include toolbar-item(-798px, -860px);
+	.toolbar-layer {
+		height: 212px;
+		background-position: 0 0;
+	}
+}
+.toolbar-item-feedback {
+	@include toolbar-item(-426px, -488px);
+}
+.toolbar-item-app {
+	@include toolbar-item(-550px, -612px);
+	.toolbar-layer {
+		height: 194px;
+		background-position: 0 -222px;
+	}
+}
+.toolbar-item-top {
+	@include toolbar-item(-674px, -736px);
+}
+
+.toolbar-layer {
+	position: absolute;
+	right: $toolbar-size - 6;
+	bottom: -10px;
+	width: 172px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	transform-origin: 80% 80%;
+	transform: scale(0);
+	transition: all 1s;
+}
+
+// practise tieba toolbar
+.tiebar {
+	position: fixed;
+	bottom: 30%;
+	left: 30%;
+}
+.toolbar-tieba {
+	position: relative;
+	display: block;
+	width: 45px;
+	height: 45px;
+	background-image: url(../img/tieba.png);
+	background-repeat: no-repeat;
+	margin-top: 1px;
+	&:hover {
+		.side-appear {
+			opacity: 1;
+			transform: scale(2);
+		}
+	}
+}
+.toolbar-tieba-refresh {
+	background-position: -220px 0;
+	&:hover {
+		background-position: -220px -55px;
+	}
+	.side-appear {
+		height:45px;
+		width: 45px;
+		background-position: -55px 0;
+	}	
+}
+.toolbar-tieba-loveBar {
+	background-position: 0 -165px;
+	&:hover {
+		background-position: -55px -165px;
+		.collectBar {
+			position: absolute;
+			line-height: 45px;
+			width: 200px;
+			right:50px;
+			font-size: 16px;
+			font-family: Arial;
+			border: 1px solid #dddddd;
+			text-decoration: none;
+		}
+	}
+	.collectBar {
+		display: none;
+	}
+
+}
+.side-appear {
+	position: absolute;
+	right: 45px;
+	background-image: url(../img/tieba.png);
+	background-repeat: no-repeat;
+	opacity: 0;
+	transform: scale(0);
+	transform-origin: right bottom;
+	transition: all 1s;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8" />
+	<title>toolbar</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>	
+</head>
+<body>
+	<div id="divContainer"></div>
+	<script>
+		var text ='';
+		for(var i = 0; i < 100;i ++) {
+			text += '<div>第--------'+i+'--------行</div>';
+		}
+		$('#divContainer').html(text);
+	</script>
+	<div class="toolbar">
+		<a href="javascript:;" class="toolbar-item toolbar-item-weixin">
+			<span class="toolbar-layer"></span>
+		</a>
+		<a href="javascript:;" class="toolbar-item toolbar-item-feedback"></a>
+		<a href="javascript:;" class="toolbar-item toolbar-item-app">
+			<span class="toolbar-layer"></span>
+		</a>
+		<a href="javascript:;" class="toolbar-item toolbar-item-top"></a>
+	</div>
+
+
+	<div class="tiebar">
+		<a href="javascript:;" class="toolbar-tieba toolbar-tieba-refresh">
+			<span class="side-appear"></span>
+		</a>
+		<div href="javascript:;" class="toolbar-tieba toolbar-tieba-loveBar">
+			<div class="collectBar">
+				<a href="#">HTML5吧</a>
+				<a href="#">CSS3吧</a>
+			</div>
+		</div>
+		<!-- <a href="javascript:;" class="toolbar-tieba toolbar-tieba-exp">
+			<span class="side-appear"></span>
+		</a>
+		<a href="javascript:;" class="toolbar-tieba toolbar-tieba-top"></a> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{ margin:0; padding: 0;}
+	body{
+		padding: 0px 0;
+		background-color : #FFF;
+		font-size: 14px;
+		-webkit-font-smoothing: antialiased;		/*字体抗锯齿*/
+	}
+	.slider,.slider .main{
+		width: 100%;
+		height: 638px;
+		position: relative;
+	}
+	.slider .main{	
+		overflow: hidden;
+	}
+	.slider .main .main-i{
+		/*padding-top: 50px;*/
+	}
+	.slider .main .main-i img{
+		/*width: 50%;*/
+		/*margin: 10% 25%;*/
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+	}
+	.slider .main .main-i .caption{
+		position: absolute;
+		right: 65%;
+		margin-top: 5%;
+		z-index: 9;
+		display: inline-block;
+	}
+	.slider .main .main-i .caption h1{
+		font-size: 50px;
+		line-height: 70px;
+		color: rgba(74, 223, 98, 1);
+		text-align: center;
+		display: inline-block;
+		padding-right: 20%;
+		width: 100%;
+		font-family: 'Open Sans Condensed';
+	}
+	.slider .main .main-i .caption h2{
+		font-size: 45px;
+		line-height: 60px;
+		color: rgba(74, 223, 98, 0.8);
+		font-family: 'Open Sans Condensed';
+		text-align: right;
+	}
+	.slider .ctrl{
+		width: 100%;
+		height: 5px;
+		/*line-height: 5px;*/
+		text-align: right;
+		/*margin-left: 60%;*/
+		position: absolute;
+		left: 0;
+		bottom: 5px;
+
+		/*background-color: #ccc;*/
+	}
+	.slider .ctrl .ctrl-i{
+		display: inline-block;
+		width: 100px;
+		height: 5px;
+		background-color: #666;
+		box-shadow: 0 1px 1px rgba(0,0,0,.3);
+		position: relative;
+		z-index: 1;
+		
+	}
+	.slider .ctrl .ctrl-i:hover{
+		background-color: limegreen;
+	}
+	.slider .ctrl .ctrl-i:hover img{
+		opacity: 1; 
+		-webkit-transition: opacity 0.2s;
+	}
+	.slider .ctrl .ctrl-i img{
+		width: 100%;
+		height: 80px;
+		position: absolute;
+		left: 0;
+		bottom: 5px;
+		opacity: 0.5;
+	}
+
+	/*active当前的状态*/
+	.slider .ctrl .ctrl-i_active{
+		background-color: lime;
+	}
+	.slider .ctrl .ctrl-i_active img{
+		opacity: 1;
+	}
+
+	.slider .main .main-i{
+		right:50%;
+	/*	opacity: 1;
+		right:20%;*/
+		opacity: 0;
+		right:50%;
+		position: relative;
+		top:0;
+		-webkit-transition: all 0.5s;
+	}
+
+	.slider .main .main-i_active{
+		right: 0;
+		opacity: 1;
+	}	
+
+	.slider .main .main-i h1{
+		margin-right: 80px;
+		display: inline;
+	}
+	.slider .main .main-i h2{
+		margin-right: -100px;
+	}
+	.slider .main .caption{
+		margin-right: 7%;
+	}
+	.slider .main .main-i h1,
+	.slider .main .main-i h2{
+		opacity: 0.1;
+		-webkit-transition: all 0.8s 0.5s;
+	}
+	.slider .main .main-i_active h1,.slider .main .main-i_active h2{
+		margin-right: 0px;
+		opacity: 1;
+	}
+
+	</style>
+</head>
+<body>
+	<div class="slider">
+		<div class="main" id="template_main">
+			<div class="main-i" id="main_{{index}}">
+				<div class="caption">
+					<h1>{{h1}}</h1>
+					<h2>{{h2}}</h2>
+				</div>
+				<img src="images/b{{index}}.png" alt="error" class='picture'>
+			</div>
+		</div>
+		<div class="ctrl" id="template_ctrl">
+			<a href="javascript:switchSlider({{index}});" class="ctrl-i" id="ctrl_{{index}}">
+				<img src="images/b{{index}}.png" alt="" class='picture'>
+			</a>
+		</div>
+		<script type="text/javascript">
+				var data = [
+					{img:2,h1:'Nodejs',h2:'轻量和高效'},
+					{img:1,h1:'JavaScript',h2:'on ChromeV8引擎 真正的快速'},
+					{img:3,h1:'--->',h2:'未来的标准'},
+					{img:4,h1:'Web',h2:'Communication'},
+					{img:5,h1:'Jquery',h2:'锋利的∝╬══→'}
+				];
+
+				var g = function (id) {
+					if( id.substring(0,1) == '.') {
+						return document.getElementsByClassName(id.substring(1));
+					}
+					return document.getElementById(id);
+				}
+
+				function addSliders() {
+					var tpl_main = g('template_main').innerHTML
+													 .replace(/^\s*/,'')
+													 .replace(/\s*$/,'');
+					var tpl_ctrl = g('template_ctrl').innerHTML
+													 .replace(/^\s*/,'')
+													 .replace(/\s*$/,'');
+					var out_main = [];
+					var out_ctrl = [];
+					for( i in data) {
+						var _html_main = tpl_main.replace(/{{index}}/g,data[i].img)
+												 .replace(/{{h1}}/g,data[i].h1)
+												 .replace(/{{h2}}/g,data[i].h2);
+
+						
+						var _ctrl_main = tpl_ctrl.replace(/{{index}}/g,data[i].img)				 	
+						out_main.push(_html_main);
+						out_ctrl.push(_ctrl_main);
+					}
+					g('template_main').innerHTML = out_main.join('');
+					g('template_ctrl').innerHTML = out_ctrl.join('');
+				}
+
+				function switchSlider(n) {
+					var main = g('main_'+n);
+					var ctrl = g('ctrl_'+n);
+					
+					var clear_main = g('.main-i');
+					var clear_ctrl = g('.ctrl-i');
+
+					main.className += ' main-i_active';
+					ctrl.className += ' ctrl-i_active';
+
+					for (i = 0; i < clear_ctrl.length; i++) {
+						clear_ctrl[i].className = clear_ctrl[i].className.replace(' ctrl-i_active','');
+						clear_main[i].className = clear_main[i].className.replace(' main-i_active','');
+					}
+
+					main.className += ' main-i_active';
+					ctrl.className += ' ctrl-i_active';
+				}
+
+				function movePictures() {
+					var pictures = g('.picture');
+					for (i = 0; i < pictures.length; i++) {
+						pictures[i].style.marginTop = (-1 *pictures[i].clientHeight/15) + 'px';
+					}
+				}
+
+				window.onload = function() {
+					addSliders();
+					setTimeout(function(){
+						switchSlider(2);
+					},200);
+					setTimeout(function(){
+						movePictures();
+					},100);
+				}
+
+			</script>
+	</div>
+</body>
+</html>

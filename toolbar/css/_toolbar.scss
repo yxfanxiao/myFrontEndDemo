@@ -1,0 +1,6 @@
+@mixin toolbar-item ($pos, $hoverPos) {
+	background-position: 0 $pos;
+	&:hover {
+		background-position: 0 $hoverPos;
+	}
+}
