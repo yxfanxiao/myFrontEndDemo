@@ -1,0 +1,87 @@
+body {
+	background: #EEE;
+}
+
+h1 {
+	text-align: center;
+	font-family: Courier;
+	font-size: 40px;
+}
+
+.container {
+	width: 1100px;
+	height: 450px;
+	margin: 20px auto;
+	position: relative;
+}
+.beauty {
+	position: absolute;
+	width: 200px;
+	height: auto;
+	border: 1px solid #ddd;
+	padding: 10px 10px;
+	background: white;
+	transition: all 1s ease 0s;
+	border-radius: 8px; 
+}
+	.beauty:hover {
+		transform: rotate(0deg);
+		transform: scale(1.2);
+		box-shadow: 2px 2px 5px #ccc;
+		z-index: 9;
+	}
+.beauty1 {
+	top: 200px;
+	left: 700px;
+	transform: rotate(20deg);
+	z-index:9;
+}
+
+.beauty2 {
+	top: 0px;
+	left: 150px;
+	transform: rotate(0deg);
+	z-index:6;
+}
+.beauty3 {
+	top: 200px;
+	left: 200px;
+	transform: rotate(-20deg);
+	z-index:7;
+}
+.beauty4 {
+	top: 300px;
+	left: 400px;
+	transform: rotate(0deg);
+	z-index:1;	
+}
+.beauty5 {
+	top: 130px;
+	left: 330px;
+	transform: rotate(-10deg);
+	z-index:3;
+}
+.beauty6 {
+	top: 300px;
+	left: 0px;
+	transform: rotate(10deg);
+	z-index:1;
+}
+.beauty7 {
+	top: 0px;
+	left: 420px;
+	transform: rotate(10deg);
+	z-index:4;	
+}
+.beauty8 {
+	top: 0px;
+	left: 800px;
+	transform: rotate(10deg);
+	z-index:1;	
+}
+.beauty9 {
+	top: 50px;
+	left: 620px;
+	transform: rotate(-10deg);
+	z-index:6;	
+}

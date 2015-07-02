@@ -9,12 +9,12 @@ function quicksort (array) {
 				while (array[beh] > temp && pre < beh) {
 					beh--;
 				}
-				array[pre] =array[beh];
+				array[pre] = array[beh];
 				array[beh] = temp;
 				while (array[pre] < temp && pre < beh) {
 					pre++;
 				}
-				array[beh] =array[pre];
+				array[beh] = array[pre];
 				array[pre] = temp;			
 			}
 			sort(previous, beh-1);
