@@ -10,13 +10,18 @@
 		* how to use `sass`
 		* how to modularize css 
 		* how to locate picture locations
-		
+
 ### sass note:
 > $foo: 10px;											// use as constant
+<br>
 > height: $foo - 6;										// when '+-*/' need add space
+<br>
 > @import "foo";										// import '_foo.scss'
-> @mixin toolbar-item ($pos, $hoverPos){} 				// in '_foo.scss' create function 			
+<br>
+> @mixin toolbar-item ($pos, $hoverPos){} 				// in '_foo.scss' create function 	
+<br>		
 > @include opacity(0);									// use function in '_foo.scss' 
+<br>
 > .demo{ height: $foo; &:hover{ height: $foo * 2;} }  	// '&:'  mean this
 
 
@@ -27,7 +32,7 @@
 		* understand html construction 
 
 ## 3. use pseudo-classes like 'before' & 'after' 
-		 holy shit! why i use this, the second way fails? I can't figure out, so move the second way to way2.html...
+		why after i use this, the second way fails? I can't figure out, so move the second way to way2.html...
 
 ## LOL suddenly want to review quicksort 
 ```javascript
