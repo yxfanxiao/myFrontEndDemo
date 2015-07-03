@@ -10,14 +10,26 @@
 		* how to use `sass`
 		* how to modularize css 
 		* how to locate picture locations
+		
+### sass note:
+> $foo: 10px;											// use as constant
+> height: $foo - 6;										// when '+-*/' need add space
+> @import "foo";										// import '_foo.scss'
+> @mixin toolbar-item ($pos, $hoverPos){} 				// in '_foo.scss' create function 			
+> @include opacity(0);									// use function in '_foo.scss' 
+> .demo{ height: $foo; &:hover{ height: $foo * 2;} }  	// '&:'  mean this
+
+
 
 ## 2. use font icon
-
+		* [Free IconMoon](https://icomoon.io/app/#/select)
+		* only need floder 'fonts' & 'style.css'
+		* understand html construction 
 
 ## 3. use pseudo-classes like 'before' & 'after' 
+		 holy shit! why i use this, the second way fails? I can't figure out, so move the second way to way2.html...
 
-
-## LOL review quicksort 
+## LOL suddenly want to review quicksort 
 ```javascript
 function quicksort (array) {
 	sort(0, array.length-1);

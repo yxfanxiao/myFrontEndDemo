@@ -5,5 +5,5 @@
 ===
 * toolbar
 * slideshow
-
+* photowall
 
