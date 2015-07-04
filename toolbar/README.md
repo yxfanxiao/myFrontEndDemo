@@ -12,9 +12,9 @@
 		* how to locate picture locations
 
 ### sass note:
-		$foo: 10px;											// use as constant
+		$foo: 10px;												// use as constant
 		height: $foo - 6;										// when '+-*/' need add space
-		@import "foo";										// import '_foo.scss'
+		@import "foo";											// import '_foo.scss'
 		@mixin toolbar-item ($pos, $hoverPos){} 				// in '_foo.scss' create function
 		@include opacity(0);									// use function in '_foo.scss' 
 		.demo{ height: $foo; &:hover{ height: $foo * 2;} }  	// '&:'  mean 'this'
