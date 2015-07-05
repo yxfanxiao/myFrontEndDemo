@@ -25,7 +25,7 @@
 		* only need floder 'fonts' & 'style.css'
 		* understand html construction 
 
-## 3. use pseudo-classes like 'before' & 'after' 
+## 3. use pseudo-elements like 'before' & 'after' 
 		why after i use this, the second way fails? I can't figure out, so move the second way to way2.html...
 
 ## LOL suddenly want to review quicksort 

@@ -4,6 +4,16 @@ requirejs.config({
 	}
 });
 
-requirejs(['jquery','validate'], function($,validate) {
-	console.log(validate.isEqual(2, 2));
+requirejs(['jquery'], function($) {
+	$('#backTop').on('click',function(){
+		alert("1");
+	});
+	// $('#backTop').on('click',move);
+	// $(window).on('scroll',checkPosition);
+
+	function move () {
+		$('html','body').animate({
+			scrollTop: 0
+		},800);
+	}
 });

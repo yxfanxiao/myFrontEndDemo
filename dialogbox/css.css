@@ -31,7 +31,7 @@ h1 {
   width: 300px;
   padding: 50px;
 }
-.chatroom .chat .dialog:before {
+.chatroom .chat .dialog::before {
   content: "";
   position: absolute;
   top: 0px;
@@ -42,7 +42,7 @@ h1 {
   border-width: 30px 20px;
   border-color: #EEE #EEE transparent transparent;
 }
-.chatroom .chat .dialog:after {
+.chatroom .chat .dialog::after {
   content: "";
   position: absolute;
   top: 0px;
