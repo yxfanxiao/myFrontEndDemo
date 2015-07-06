@@ -4,16 +4,14 @@ requirejs.config({
 	}
 });
 
-requirejs(['jquery'], function($) {
-	$('#backTop').on('click',function(){
-		alert("1");
+requirejs(['jquery','backtop'], function($, backtop) {
+	new backtop.BackTop($('#backTop'), {
+		mode: 'move'
+		// dest: 300,
+		// speed: 500
 	});
-	// $('#backTop').on('click',move);
-	// $(window).on('scroll',checkPosition);
 
-	function move () {
-		$('html','body').animate({
-			scrollTop: 0
-		},800);
-	}
+
+
+
 });
