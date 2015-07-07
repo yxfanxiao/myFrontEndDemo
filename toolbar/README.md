@@ -2,23 +2,28 @@
 
 ##Screenshot
 
-![](https://github.com/yxfanxiao/myFrontEndDemo/raw/master/toolbar/img/screenshot.png)
+![](https://github.com/yxfanxiao/myFrontEndDemo/raw/master/toolbar/img/screenshot1.png)
 
 ## 1. use background pictures
-##### what i learn in this demo
-		* how to use `require.js`
-		* how to use `sass`
+### what i learn in this demo
+		* how to use 'require.js'
+		* how to use 'sass'
 		* how to modularize css 
 		* how to locate picture locations
 
-### sass note:
+### SASS note:
 		$foo: 10px;												// use as constant
 		height: $foo - 6;										// when '+-*/' need add space
 		@import "foo";											// import '_foo.scss'
 		@mixin toolbar-item ($pos, $hoverPos){} 				// in '_foo.scss' create function
 		@include opacity(0);									// use function in '_foo.scss' 
 		.demo{ height: $foo; &:hover{ height: $foo * 2;} }  	// '&:'  mean 'this'
+		@extend .box          	 								// extend the class 'box'
 
+### RequireJS note:
+		* requirejs.config    									
+		* requirejs
+		* define
 
 ## 2. use font icon
 		* [Free IconMoon](https://icomoon.io/app/#/select)

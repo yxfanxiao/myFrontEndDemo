@@ -4,14 +4,14 @@ requirejs.config({
 	}
 });
 
-requirejs(['jquery','backtop'], function($, backtop) {
-	new backtop.BackTop($('#backTop'), {
+requirejs(['jquery', 'backtop'], function($, backtop) {
+	// new backtop.BackTop($('#backTop'), {
+	// 	mode: 'move',
+	// 	speed: 0
+	// });
+	
+	$('#backTop').backtop({
 		mode: 'move'
-		// dest: 300,
-		// speed: 500
 	});
-
-
-
 
 });

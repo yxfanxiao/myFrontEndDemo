@@ -1,4 +1,4 @@
-define(['query','scrollto'], function ($) {
+define(['jquery','scrollto'], function ($, scrollto) {
 	function BackTop (el, opts) {
 		this.opts = $.extend({}, BackTop.DEFAULTS, opts);
 		this.$el = $(el);
@@ -15,7 +15,7 @@ define(['query','scrollto'], function ($) {
 		{
 			this.$el.on('click', $.proxy(this._go, this));
 		}
-		$(window).on('scroll', this._checkPosition, this); 
+		$(window).on('scroll', $.proxy(this._checkPosition, this)); 
 	}
 	BackTop.prototype._move = function () {
 		this.scroll.move();
@@ -33,10 +33,20 @@ define(['query','scrollto'], function ($) {
 			this.$el.fadeOut();
 		}
 	}
+
 	BackTop.DEFAULTS = {
 		mode: 'move',
-		pos: $(window).height()
+		pos: $(window).height(),
+		speed: 800
 	};
+
+	$.fn.extend({
+		backtop: function (opts) {
+			return this.each(function () {
+				new BackTop(this, opts);
+			});
+		}
+	});
 
 	return {
 		BackTop: BackTop
