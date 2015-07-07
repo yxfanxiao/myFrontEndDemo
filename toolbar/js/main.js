@@ -5,6 +5,7 @@ requirejs.config({
 });
 
 requirejs(['jquery', 'backtop'], function($, backtop) {
+	
 	// new backtop.BackTop($('#backTop'), {
 	// 	mode: 'move',
 	// 	speed: 0
