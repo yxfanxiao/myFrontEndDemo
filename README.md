@@ -6,4 +6,5 @@
 * toolbar
 * slideshow
 * photowall
-
+* dialogbox
+* tabswitch

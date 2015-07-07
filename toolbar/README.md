@@ -24,7 +24,8 @@
 		* requirejs.config    									
 		* requirejs
 		* define
-```
+
+``` javascript
 requirejs.config({
 	path: {
 		jquery: 'jquery-1.11.3'
@@ -42,7 +43,7 @@ define(['jquery'], function () {
 
 	};
 });
-``` javascript
+``` 
 
 ## 2. use font icon
 		* [Free IconMoon](https://icomoon.io/app/#/select)
@@ -53,6 +54,7 @@ define(['jquery'], function () {
 		why after i use this, the second way fails? I can't figure out, so move the second way to way2.html...
 
 ## LOL suddenly want to review quicksort 
+
 ``` javascript
 function quicksort (array) {
 	sort(0, array.length-1);
