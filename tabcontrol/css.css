@@ -1,0 +1,103 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.list {
+	width: 350px;
+	/*height: 300px;*/
+	border: 1px solid #EEE;
+	margin: 10% auto;
+}
+
+.tabs {
+	background-color: #E9CCEC;
+}
+
+h3 {
+	display: inline-block;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	padding: 0 10px;
+	position: relative;
+}
+.arrow {
+	position: absolute;
+	top: 30px;
+	left: 35px;
+	border: 5px solid;
+	border-color: #E182DE transparent transparent transparent;
+}
+
+
+ul {
+	margin: 20px 0;
+}
+
+.rank {
+	display: none;
+}
+.readingRank {
+	display: block;
+}
+
+li {
+	list-style: none;
+	border-bottom: 1px dotted #CCC;
+	line-height: 24px;
+	color: #333;
+	font-size: 14px;
+	padding-left: 30px;
+	cursor: pointer;
+	position: relative;
+}
+	li:hover {
+		background-color: #F9A67A;
+	}
+	li:hover::before {
+		content: "";
+		position: absolute;
+		border: 5px solid;
+		top: 10px;
+		left: 5px;
+		border-color: black transparent transparent transparent;
+	}
+	li::before {
+		content: "";
+		position: absolute;
+		border: 5px solid;
+		top: 8px;
+		left: 10px;
+		border-color: transparent transparent transparent black;
+	}
+
+ul li span {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	background-color: #F93;
+	text-align: center;
+	line-height: 20px;
+}
+
+ul li dl {
+	display: none;
+}
+ul li:hover dl {
+	display: block;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #000;
+}
+	ul li a:hover {
+		color: white;
+		text-decoration: underline;
+	}
+
+
+.active {
+	background-color: #E182DE;
+}
