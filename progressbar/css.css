@@ -1,0 +1,98 @@
+.main {
+	margin: 50px 30%;
+}
+.content {
+	margin: 100px 0;
+}
+.content span {
+	float: left;
+}
+.content  .foo{
+	float: left;
+	margin: 50px 100px;
+}
+.content #line {
+	height: 10px;
+	width: 100px;
+	background-color: red;
+	animation: spin 5s  infinite linear; 
+}
+@keyframes change-color {
+	0%		{ background-color: red; }
+	20%		{ background-color: yellow; }
+	40%		{ background-color: pink; }
+	60%		{ background-color: black; }
+	80% 	{ background-color: green; }
+}
+.content #progressbar div{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	background-color: #EEE;
+}
+.content #progressbar .rotate {
+	clip: rect(0 50px 100px 0);
+	background-color: red;
+	animation: spin 4s linear;
+	/*z-index: 5;*/
+}
+.content #progressbar .left {
+	opacity: 0;
+	clip: rect(0 50px 100px 0);
+	animation: toggle 2s step-start;
+	/*z-index: 7;*/
+}
+.content #progressbar .right {
+	clip: rect(0 100px 100px 50px);
+	background-color: red;
+	animation: toggle 2s step-end;
+}
+.content #progressbar .bottom {
+}
+
+@keyframes toggle {
+	0%			{ opacity: 0; }
+	100%		{ opacity: 1; }	
+}
+
+.content::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+@keyframes spin {
+	0%				{ transform: rotate(-360deg); }
+}
+
+.content #processbar {
+	height: 10px;
+	width: 200px;
+	background-color: red;
+	position: relative;
+	overflow: hidden;
+}
+.content #processbar::after {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 10px;
+	width: 200px;
+	margin-left: 100%;
+	background-color: #CCC ;
+	animation: progress 10s ;
+}
+
+@keyframes progress {
+	0%			{ margin-left: 0%; }
+	10%			{ margin-left: 10%; }
+	30%			{ margin-left: 30%; }
+	60%			{ margin-left: 60%; }
+	100%		{ margin-left: 100%; }			
+}
+
+
+
+
+
