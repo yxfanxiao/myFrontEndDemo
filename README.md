@@ -8,3 +8,4 @@
 * photowall
 * dialogbox
 * tabswitch
+* progressbar
