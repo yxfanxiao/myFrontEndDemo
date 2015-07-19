@@ -1,0 +1,35 @@
+.content {
+	height: 200px;
+	width: 200px;
+	margin: 25% auto;
+}
+
+.content div {
+	height: 25px;
+	width: 5px;
+	background-color: green;
+	margin: 0 3px;
+	float: left;
+}
+
+.content .rect1 {
+	animation: loading 1s infinite linear 0.1s;
+}
+.content .rect2 {
+	animation: loading 1s infinite linear 0.2s;
+}
+.content .rect3 {
+	animation: loading 1s infinite linear 0.3s;
+}
+.content .rect4 {
+	animation: loading 1s infinite linear 0.4s;
+}
+
+
+@keyframes loading {
+	0%		{ transform: scale(1); }
+	25%		{ transform: scale(1.5); }
+	50%		{ transform: scale(1); }
+	75%		{ transform: scale(0.5); }
+	100%	{ transform: scale(1); }
+}

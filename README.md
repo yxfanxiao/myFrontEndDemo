@@ -9,3 +9,4 @@
 * dialogbox
 * tabswitch
 * progressbar
+* loading
