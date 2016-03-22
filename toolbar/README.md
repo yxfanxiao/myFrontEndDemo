@@ -64,12 +64,12 @@ function quicksort (array) {
 		var temp = array[pre];
 		if (pre < beh) {
 			while (pre < beh) {
-				while (array[beh] > temp && pre < beh) {
+				while (array[beh] >= temp && pre < beh) {
 					beh--;
 				}
 				array[pre] = array[beh];
 				array[beh] = temp;
-				while (array[pre] < temp && pre < beh) {
+				while (array[pre] <= temp && pre < beh) {
 					pre++;
 				}
 				array[beh] = array[pre];
